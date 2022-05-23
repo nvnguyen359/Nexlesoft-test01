@@ -69,10 +69,10 @@ const signIn = async (req, res, next) => {
 	}
 	service.tableName = "users";
 	let data = req.body;
-	console.log(data);
+
 	//let {}
 	const user = await service.getUser(data);
-
+	console.log(user);
 	if (user) {
 		const math = bcrypt.compareSync(data.password, user.password);
 		try {
